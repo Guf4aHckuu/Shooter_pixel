@@ -64,8 +64,8 @@ public class Pistol : MonoBehaviour
             bullet.transform.position = _playerHand.position;
             bullet.transform.rotation = _playerHand.rotation;
             bullet.SetActive(true);
-            Rigidbody2D currentBulletVelocity = bullet.GetComponentInChildren<Rigidbody2D>();
-            currentBulletVelocity.velocity = _fireSpeed * _playerHand.forward;
+            Rigidbody2D currentBulletVelocity = bullet.GetComponent<Rigidbody2D>();
+            currentBulletVelocity.velocity = _fireSpeed * _playerHand.right;
         }
     }
 
