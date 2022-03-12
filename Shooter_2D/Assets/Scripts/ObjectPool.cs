@@ -1,14 +1,13 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
     public static ObjectPool objectPool;
-    [SerializeField] private List<GameObject> _pooledObjects;
-    [SerializeField] private GameObject _objectToPool;
-    [SerializeField] private int _amountToPool;
-    private void Awake()
+    [SerializeField] protected List<GameObject> _pooledObjects;
+    [SerializeField] protected GameObject _objectToPool;
+    [SerializeField] protected int _amountToPool;
+    public virtual void Awake()
     {
         objectPool = this;
     }

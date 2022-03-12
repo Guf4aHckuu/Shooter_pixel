@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponSwitch : MonoBehaviour
@@ -11,6 +8,7 @@ public class WeaponSwitch : MonoBehaviour
     {
         SelectWeapon();
     }
+
     private void Update()
     {
         int currentWeapon = _weaponScwitch;
@@ -21,6 +19,7 @@ public class WeaponSwitch : MonoBehaviour
             SelectWeapon();
         }
     }
+
     private void SelectWeapon()
     {
         int i = 0;
@@ -36,8 +35,8 @@ public class WeaponSwitch : MonoBehaviour
             }
             i++;
         }
-
     }
+
     private void ScrollWeapon()
     {
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)

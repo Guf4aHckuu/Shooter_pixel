@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 4570413690849751695}
   - component: {fileID: 6674258760256721146}
   - component: {fileID: 6181645937870602477}
-  - component: {fileID: -6744762258053969934}
+  - component: {fileID: 8739077729108529360}
   m_Layer: 0
   m_Name: 01
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5514175573298340314}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.76604444, y: 0, z: 0, w: 0.64278764}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 100, y: 0, z: 0}
 --- !u!212 &4570413690849751695
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -113,7 +113,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.01
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -122,7 +122,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-6744762258053969934
+--- !u!114 &8739077729108529360
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,6 +131,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5514175573298340314}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9de8bd4a5674a8c4382352d06e80ba47, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f9d78fdf1f52ae438545529d0c4658f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damage: 20
+  _bulletHandler: {fileID: 0}

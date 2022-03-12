@@ -34,26 +34,27 @@ public class Pistol : MonoBehaviour
             Debug.Log(_bulletCounterCurrent);
         }
 
-        if(_bulletCounterCurrent <= 0)
+        if (_bulletCounterCurrent <= 0)
         {
             Reload();
         }
+
+        Debug.DrawRay(_playerHand.position, _playerHand.right * _rangeOfBullet, Color.green);
     }
 
     private void DamageByWeapon()
     {
-        Vector2 endPosition = transform.position + Vector3.forward * _rangeOfBullet;
+        Vector2 endPosition = transform.position + Vector3.right * _rangeOfBullet;
         RaycastHit2D hit = Physics2D.Linecast(_playerHand.position, endPosition);
-
         Health health = hit.transform.GetComponent<Health>();
         if(hit.collider != null)
         {
+            Debug.DrawRay(_playerHand.position, _playerHand.right * _rangeOfBullet, Color.red);
             if (health != null)
             {
-                health.TakeDamage(_damage);
+                health.TakeDamage(_damage);               
             }
-        }
-            
+        }               
     }
 
     private void SchootParticle()
@@ -65,7 +66,7 @@ public class Pistol : MonoBehaviour
             bullet.transform.rotation = _playerHand.rotation;
             bullet.SetActive(true);
             Rigidbody2D currentBulletVelocity = bullet.GetComponentInChildren<Rigidbody2D>();
-            currentBulletVelocity.velocity = _fireSpeed * _playerHand.forward;
+            currentBulletVelocity.velocity = _fireSpeed * _playerHand.right;
         }
     }
 

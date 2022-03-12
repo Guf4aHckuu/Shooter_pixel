@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -14,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
+    //насилие над кодом, но не знаю, как по-другому
     private void Update()
     {
         if (Input.GetKey(KeyCode.W))

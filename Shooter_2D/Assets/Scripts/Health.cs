@@ -1,17 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private int _health;
+    public float _health;
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(float iDamage)
     {
-        _health -= damage;
-        if(_health <= 0)
+        _health -= iDamage;
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0, 1);
+        Invoke("ChangeColorByHitToDefault", 0.1f);
+        if (_health <= 0)
         {
-            //смерть
+            Destroy(gameObject, 0.1f);
         }
+    }
+
+    public void ChangeColorByHitToDefault()
+    {
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 1);
     }
 }
