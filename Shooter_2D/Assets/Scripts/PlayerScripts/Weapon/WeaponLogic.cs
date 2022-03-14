@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponLogic : MonoBehaviour
 {
@@ -8,9 +7,9 @@ public class WeaponLogic : MonoBehaviour
     [SerializeField] private float _startTimeMaxtBtwReload;
     [SerializeField] private HUDManager _hudManager;
     [SerializeField] protected int _bulletCounterMax;
-    [SerializeField] protected int _rangeOfBullet;
     [SerializeField] protected Transform _playerHand;
     [SerializeField] protected float _fireSpeed;
+    [SerializeField] protected Text _currentBulletText;
     protected int _bulletCounterCurrent;
     protected float _timeBtwShoots = 0f;
     protected float _startTimeBtwReload;
@@ -21,7 +20,7 @@ public class WeaponLogic : MonoBehaviour
         _startTimeBtwReload = _startTimeMaxtBtwReload;
     }
 
-    private void Update()
+    public virtual void Update()
     {
         _timeBtwShoots -= Time.deltaTime;
         if (Input.GetMouseButton(0) && _bulletCounterCurrent > 0 && _timeBtwShoots <= 0)
@@ -36,8 +35,6 @@ public class WeaponLogic : MonoBehaviour
         {
             Reload();
         }
-        Debug.DrawRay(_playerHand.position, _playerHand.right * _rangeOfBullet, Color.green);
-
     }
 
     public virtual void CreateBullet()

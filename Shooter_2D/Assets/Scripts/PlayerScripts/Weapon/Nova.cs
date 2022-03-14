@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Nova : WeaponLogic
 {
+    public override void Update()
+    {
+        _currentBulletText.text = _bulletCounterCurrent.ToString() + "/" + _bulletCounterMax.ToString();
+        base.Update();
+    }
+
     public override void CreateBullet()
     {
         for (int i = 0; i < 3; i++)

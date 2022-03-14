@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class HUDManager : MonoBehaviour
 {
     [SerializeField] private Image _heathbarImage;
-    [SerializeField] private Text _bulletCounterText;
 
     public void HealthOfHero(float iHealthPoint, float iMaxHealthPoint)
     {
@@ -17,9 +16,9 @@ public class HUDManager : MonoBehaviour
         }
     }
 
-    public void CountBullets(int iCurrentBulletCounter)
+    /*public void CountBullets(int iCurrentBulletCounter)
     {
         //потом доделаю
         _bulletCounterText.text = iCurrentBulletCounter.ToString();
-    }
+    }*/
 }

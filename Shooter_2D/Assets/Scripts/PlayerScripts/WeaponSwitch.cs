@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponSwitch : MonoBehaviour
 {
     public int _weaponScwitch = 0;
+    public GameObject[] _bulletCounterText;
 
     private void Start()
     {
@@ -28,10 +30,12 @@ public class WeaponSwitch : MonoBehaviour
             if (i == _weaponScwitch)
             {
                 weapon.gameObject.SetActive(true);
+                _bulletCounterText[i].SetActive(true);
             }
             else
             {
                 weapon.gameObject.SetActive(false);
+                _bulletCounterText[i].SetActive(false);
             }
             i++;
         }
@@ -41,18 +45,6 @@ public class WeaponSwitch : MonoBehaviour
     {
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
-            if (_weaponScwitch >= transform.childCount - 1)
-            {
-                _weaponScwitch = 0;
-            }
-            else
-            {
-                _weaponScwitch++;
-            }
-        }
-
-        if (Input.GetAxis("Mouse ScrollWheel") < 0f)
-        {
             if (_weaponScwitch <= 0)
             {
                 _weaponScwitch = transform.childCount - 1;
@@ -60,6 +52,18 @@ public class WeaponSwitch : MonoBehaviour
             else
             {
                 _weaponScwitch--;
+            }       
+        }
+
+        if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+        {
+            if (_weaponScwitch >= transform.childCount - 1)
+            {
+                _weaponScwitch = 0;
+            }
+            else
+            {
+                _weaponScwitch++;
             }
         }
     }
