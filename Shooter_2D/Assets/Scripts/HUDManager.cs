@@ -7,18 +7,12 @@ public class HUDManager : MonoBehaviour
 {
     [SerializeField] private Image _heathbarImage;
 
-    public void HealthOfHero(float iHealthPoint, float iMaxHealthPoint)
+    public void HealthOfHero(float fHealthPoint, float fMaxHealthPoint)
     {
-        _heathbarImage.fillAmount = iHealthPoint / iMaxHealthPoint;
-        if(iHealthPoint <= 0)
+        _heathbarImage.fillAmount = fHealthPoint / fMaxHealthPoint;
+        if (fHealthPoint <= 0)
         {
             //конец игры
         }
     }
-
-    /*public void CountBullets(int iCurrentBulletCounter)
-    {
-        //потом доделаю
-        _bulletCounterText.text = iCurrentBulletCounter.ToString();
-    }*/
 }

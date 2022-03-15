@@ -5,11 +5,10 @@ public class WeaponLogic : MonoBehaviour
 {
     [SerializeField] private float _startTimeBtwSchoots;
     [SerializeField] private float _startTimeMaxtBtwReload;
-    [SerializeField] private HUDManager _hudManager;
+    [SerializeField] private Text _currentBulletText;
     [SerializeField] protected int _bulletCounterMax;
     [SerializeField] protected Transform _playerHand;
     [SerializeField] protected float _fireSpeed;
-    [SerializeField] protected Text _currentBulletText;
     protected int _bulletCounterCurrent;
     protected float _timeBtwShoots = 0f;
     protected float _startTimeBtwReload;
@@ -35,6 +34,8 @@ public class WeaponLogic : MonoBehaviour
         {
             Reload();
         }
+
+        _currentBulletText.text = _bulletCounterCurrent.ToString() + "/" + _bulletCounterMax.ToString();
     }
 
     public virtual void CreateBullet()

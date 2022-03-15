@@ -10395,11 +10395,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startTimeBtwSchoots: 0.8
   _startTimeMaxtBtwReload: 2
-  _hudManager: {fileID: 0}
+  _currentBulletText: {fileID: 1775581629}
   _bulletCounterMax: 9
   _playerHand: {fileID: 1194815371}
   _fireSpeed: 30
-  _currentBulletText: {fileID: 1775581629}
 --- !u!1 &1137816317
 GameObject:
   m_ObjectHideFlags: 0
@@ -10727,11 +10726,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startTimeBtwSchoots: 0.15
   _startTimeMaxtBtwReload: 2
-  _hudManager: {fileID: 0}
+  _currentBulletText: {fileID: 770965374}
   _bulletCounterMax: 30
   _playerHand: {fileID: 1194815371}
   _fireSpeed: 30
-  _currentBulletText: {fileID: 770965374}
 --- !u!1 &1421986859
 GameObject:
   m_ObjectHideFlags: 0
@@ -46512,11 +46510,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startTimeBtwSchoots: 0.25
   _startTimeMaxtBtwReload: 1.5
-  _hudManager: {fileID: 971146775}
+  _currentBulletText: {fileID: 1918732350}
   _bulletCounterMax: 12
   _playerHand: {fileID: 1194815371}
   _fireSpeed: 30
-  _currentBulletText: {fileID: 1918732350}
 --- !u!1 &2066435226
 GameObject:
   m_ObjectHideFlags: 0
